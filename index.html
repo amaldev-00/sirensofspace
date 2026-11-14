@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Left Behind: Stories from NASA’s Silent Machines</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Scroll through time and hear 15 retired NASA machines tell their own stories, with real dates and numbers.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Nunito:wght@500;700&display=swap">
+<style>
+:root{color-scheme:dark;--bg:#05060f;--tx:#e8ecf8;--mu:#9aa5c4;--ac:#ffb84d;--bl:#7fbfff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;color:var(--tx);font-family:"Nunito",system-ui,sans-serif;font-weight:500;-webkit-text-size-adjust:100%}
+h1,h2,#yr{font-family:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif}
+#sk{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+main{position:relative;z-index:1}
+.hero{height:100svh;display:grid;place-content:center;text-align:center;padding:24px 24px 90px}
+h1{margin:0;font-weight:800;font-size:clamp(52px,15vw,150px);line-height:.95;letter-spacing:-.02em}
+.hero p{color:var(--mu);max-width:30ch;margin:18px auto 0;font-size:clamp(17px,4.4vw,24px);line-height:1.4}
+.hint{margin-top:34px;color:var(--ac);font-weight:700;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+.scene{height:260vh;position:relative}
+.stage{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;padding:env(safe-area-inset-top,0px) 0 calc(78px + env(safe-area-inset-bottom,0px));overflow:hidden}
+.art{flex:1;min-height:0;position:relative}
+.moon{--g1:#9a9dab;--g2:#40424f}.mars{--g1:#c4623a;--g2:#5a2414}.rock{--g1:#8a7a6a;--g2:#3a3028}
+.mars .art{background:linear-gradient(transparent 20%,#c4623a38)}
+.gr{position:absolute;left:-10%;right:-10%;bottom:0;height:30%;border-radius:50% 50% 0 0/45% 45% 0 0;background:radial-gradient(ellipse 60px 11px at 22% 48%,#0003,transparent),radial-gradient(ellipse 90px 14px at 72% 62%,#0003,transparent),linear-gradient(var(--g1),var(--g2))}
+.earth{position:absolute;top:9%;right:11%;width:clamp(34px,9vw,68px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 32%,#9fdcff,#2a6ac0 55%,#0b2a5c)}
+.mach{position:absolute;left:50%;bottom:24%;width:clamp(120px,34vw,220px);margin-left:calc(clamp(120px,34vw,220px)/-2);transform:translate(var(--dx,0),var(--dy,0)) rotate(var(--r,0deg));filter:drop-shadow(0 8px 14px #0009)}
+.space .mach{bottom:34%}
+.mach svg{display:block;width:100%;height:auto;overflow:visible}
+.wh{transform-box:fill-box;transform-origin:center;transform:rotate(var(--w,0deg))}
+.led{fill:#ff5a5a;animation:bl 1.3s infinite}
+@keyframes bl{50%{opacity:.15}}
+.ring{fill:none;stroke:#9fc2ff;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:rg 2.6s ease-out infinite}
+.ring+.ring{animation-delay:1.3s}
+@keyframes rg{0%{transform:scale(.3);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+.rot{transform-box:fill-box;transform-origin:center;animation:rt .1s linear infinite}
+@keyframes rt{50%{transform:scaleX(.18)}}
+.off .rot{animation:none}
+.card{position:relative;margin:-26px auto 0;width:min(92vw,680px);max-height:calc(100svh - 170px);overflow:auto;padding:16px 18px;border-radius:18px;background:rgba(8,12,28,.84);border:1px solid #ffffff1f;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 10px 40px #000a}
+.card small{display:block;color:var(--ac);font-weight:700;font-size:13px}
+.card h2{margin:3px 0 8px;font-size:clamp(24px,6vw,36px);line-height:1.05}
+.card p{margin:0 0 12px;line-height:1.5;font-size:clamp(14px,3.8vw,17px);color:#dbe2f5}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.st div{background:#ffffff0f;border-radius:10px;padding:8px 9px}
+.st b{display:block;color:var(--bl);font-size:clamp(14px,3.8vw,19px);line-height:1.15}
+.st span{display:block;font-size:11.5px;line-height:1.25;color:var(--mu);margin-top:2px}
+.card a{display:inline-block;margin-top:10px;font-size:12.5px;color:var(--mu)}
+.end{max-width:680px;margin:0 auto;padding:12vh 22px 140px;line-height:1.55}
+.end h2{font-size:clamp(28px,7vw,44px);margin:0 0 12px}
+.end p,.end li{color:#cfd7ee;font-size:16px}
+.end ul{padding-left:20px;columns:1}
+.end a{color:var(--bl)}
+.end small{color:var(--mu);display:block;margin-top:18px;font-size:13.5px}
+#tl{position:fixed;left:0;right:0;bottom:0;z-index:5;display:flex;align-items:center;gap:16px;padding:22px 18px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,#05060ff0 45%)}
+#yr{font-weight:800;font-size:clamp(26px,7vw,38px);line-height:1;color:var(--ac);min-width:4ch;font-variant-numeric:tabular-nums}
+#trk{position:relative;flex:1;height:4px;background:#ffffff26;border-radius:4px;margin-bottom:10px}
+#fl{position:absolute;left:0;top:0;bottom:0;background:var(--ac);border-radius:4px}
+#mk{position:absolute;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:#fff;box-shadow:0 0 14px 4px var(--ac);text-decoration:none}
+.tk{position:absolute;top:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;padding:0;border:0;border-radius:50%;background:#8892ad;cursor:pointer}
+.tk.on{background:var(--ac)}
+.tk:focus-visible,.end a:focus-visible,.card a:focus-visible{outline:2px solid var(--bl);outline-offset:3px}
+.dc{position:absolute;top:12px;font-size:10.5px;color:var(--mu);transform:translateX(-50%)}
+@media (prefers-reduced-motion:reduce){.led,.ring,.rot,.hint{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="sk" aria-hidden="true"></canvas>
+<main>
+  <section class="hero">
+    <div>
+      <h1>Left Behind</h1>
+      <p>Fifteen NASA machines. They finished their jobs. Now they tell you their stories.</p>
+      <div class="hint">Scroll down to travel through time</div>
+    </div>
+  </section>
+  <div id="sc"></div>
+  <section class="end">
+    <h2>Where the facts come from</h2>
+    <p>The machines’ voices are imagined to make the stories fun. The dates and numbers come from NASA’s mission pages:</p>
+    <ul>
+      <li><a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C" target="_blank" rel="noopener">Apollo Lunar Module (NSSDCA)</a></li>
+      <li><a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C" target="_blank" rel="noopener">Lunar Roving Vehicles (NSSDCA)</a></li>
+      <li><a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C" target="_blank" rel="noopener">ALSEP science packages (NSSDCA)</a></li>
+      <li><a href="https://science.nasa.gov/mission/surveyor-3/" target="_blank" rel="noopener">Surveyor 3</a></li>
+      <li><a href="https://science.nasa.gov/mission/mars-pathfinder/" target="_blank" rel="noopener">Mars Pathfinder and Sojourner</a></li>
+      <li><a href="https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/" target="_blank" rel="noopener">Spirit and Opportunity</a></li>
+      <li><a href="https://science.nasa.gov/mission/viking-1/" target="_blank" rel="noopener">Viking 1</a></li>
+      <li><a href="https://science.nasa.gov/mission/insight/" target="_blank" rel="noopener">InSight</a></li>
+      <li><a href="https://science.nasa.gov/mission/dawn/" target="_blank" rel="noopener">Dawn</a></li>
+      <li><a href="https://science.nasa.gov/mission/near-shoemaker/" target="_blank" rel="noopener">NEAR Shoemaker</a></li>
+      <li><a href="https://science.nasa.gov/mission/pioneer-10/" target="_blank" rel="noopener">Pioneer 10</a></li>
+      <li><a href="https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/" target="_blank" rel="noopener">Ingenuity Mars Helicopter</a></li>
+      <li><a href="https://science.nasa.gov/mission/kepler/" target="_blank" rel="noopener">Kepler Space Telescope</a></li>
+      <li><a href="https://nssdc.gsfc.nasa.gov/" target="_blank" rel="noopener">NASA Space Science Data Coordinated Archive</a></li>
+    </ul>
+    <small>Use of AI: the code and story text were written with help from Claude, an AI assistant, using the NASA pages above. The idea and creative direction came from the project’s creator. The art is drawn with simple shapes, with no NASA logos or images. This project is not made by or endorsed by NASA.</small>
+  </section>
+</main>
+<nav id="tl" aria-label="Timeline of the machines"><b id="yr">1967</b><div id="trk"><i id="fl"></i><u id="mk"></u></div></nav>
+<script>
+const G={
+lander:'<svg viewBox="0 0 120 90" role="img" aria-label="A lander"><g fill="#d7dce8" stroke="#8892ad" stroke-width="2"><path d="M30 20h60l10 22H20z"/><rect x="38" y="42" width="44" height="16" rx="3" fill="#ffb84d" stroke="none"/><path d="M34 58L16 84M86 58l18 26M60 58v26" fill="none" stroke-width="3"/><path d="M8 85h16M96 85h16M52 85h16" stroke-width="4"/><path d="M60 20V6" fill="none"/></g><circle class="led" cx="60" cy="31" r="4"/></svg>',
+rover:'<svg viewBox="0 0 120 90" role="img" aria-label="A rover"><g stroke="#8892ad" stroke-width="2" fill="#d7dce8"><rect x="22" y="32" width="76" height="22" rx="5"/><rect x="30" y="20" width="30" height="12" rx="3" fill="#ffb84d" stroke="none"/><path d="M82 32l10-20" fill="none" stroke-width="3"/><ellipse cx="94" cy="11" rx="12" ry="5"/></g><g class="wh"><circle cx="36" cy="68" r="15" fill="#2a3150" stroke="#8892ad" stroke-width="3"/><path d="M36 54v28M22 68h28" stroke="#8892ad" stroke-width="2"/></g><g class="wh"><circle cx="86" cy="68" r="15" fill="#2a3150" stroke="#8892ad" stroke-width="3"/><path d="M86 54v28M72 68h28" stroke="#8892ad" stroke-width="2"/></g></svg>',
+probe:'<svg viewBox="0 0 120 90" role="img" aria-label="A space probe"><circle class="ring" cx="60" cy="14" r="14"/><circle class="ring" cx="60" cy="14" r="14"/><g stroke="#8892ad" stroke-width="2"><rect x="46" y="38" width="28" height="26" rx="4" fill="#d7dce8"/><rect x="4" y="44" width="36" height="14" fill="#3b6fd6"/><rect x="80" y="44" width="36" height="14" fill="#3b6fd6"/><path d="M60 38V22" fill="none"/><ellipse cx="60" cy="20" rx="20" ry="7" fill="#ffb84d"/></g></svg>',
+heli:'<svg viewBox="0 0 120 90" role="img" aria-label="A helicopter"><g stroke="#8892ad" stroke-width="2"><rect x="46" y="14" width="28" height="7" fill="#3b6fd6"/><path d="M60 21v14" fill="none"/><rect class="rot" x="14" y="31" width="92" height="5" rx="2.5" fill="#9fc2ff" stroke="none"/><rect x="48" y="40" width="24" height="24" rx="5" fill="#d7dce8"/><path d="M52 66l-8 16M68 66l8 16" fill="none" stroke-width="3"/></g></svg>'};
+const D=[
+{y:1967.3,k:"The Moon, April 20, 1967",n:"Surveyor 3",g:"lander",a:"land",b:"moon",t:"Hi, I’m Surveyor 3. Before people could land on the Moon, someone had to check that the ground was safe. That was my job. I touched down softly in April 1967 and sent home over 6,300 photos. In November 1969, two Apollo 12 astronauts walked up to me and took my camera back to Earth.",s:[["6,300+","photos sent home"],["Apr 1967","soft landing"],["Nov 1969","Apollo 12 visit"]],u:"https://science.nasa.gov/mission/surveyor-3/"},
+{y:1969.55,k:"The Moon, July 20, 1969",n:"Apollo 11 Eagle, descent stage",g:"lander",a:"land",b:"moon",t:"I’m the bottom half of the lunar module Eagle. On July 20, 1969, I carried Neil Armstrong and Buzz Aldrin down to the Sea of Tranquility. When their Moon walk was over, I became a launch pad. The top half blasted off from my back, and I stayed behind.",s:[["Jul 20, 1969","landing day"],["about 2½ hrs","Moon walk"],["about 21½ hrs","on the surface"]],u:"https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C"},
+{y:1969.9,k:"The Moon, November 1969",n:"ALSEP science stations",g:"lander",a:"land",b:"moon",t:"We’re ALSEP, the Moon’s science stations. Apollo crews set us up with seismometers and other instruments, then left us to listen and measure on our own. NASA switched us off on September 30, 1977. Laser mirrors that astronauts left on the Moon are still used today.",s:[["5","stations from Apollo 12, 14, 15, 16, 17"],["Sep 30, 1977","switched off"],["Nov 1969","first full station"]],u:"https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C"},
+{y:1971.6,k:"The Moon, 1971 and 1972",n:"Lunar Roving Vehicles",g:"rover",a:"drive",b:"moon",t:"We’re the Moon buggies! Three of us rode to the Moon folded up on Apollo 15, 16 and 17. Our batteries and electric motors carried astronauts much farther than they could walk, to hunt for rocks. When each crew finished, they parked us. We’re still here.",s:[["3","rovers parked on the Moon"],["Jul 31, 1971","first drive, Apollo 15"],["about 36 km","Apollo 17’s total drive"]],u:"https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C"},
+{y:1972.2,k:"Deep space, launched March 2, 1972",n:"Pioneer 10",g:"probe",a:"drift",b:"space",t:"I’m Pioneer 10, and I went first. I crossed the asteroid belt, and in December 1973 I became the first spacecraft to visit Jupiter. My last signal reached Earth on January 23, 2003. Now I coast in silence toward the stars, carrying a plaque that shows where I came from.",s:[["Dec 1973","Jupiter flyby"],["Jan 23, 2003","last signal"],["about 2 million yrs","to reach the red star Aldebaran"]],u:"https://science.nasa.gov/mission/pioneer-10/"},
+{y:1976.55,k:"Mars, July 20, 1976",n:"Viking 1 lander",g:"lander",a:"land",b:"mars",t:"I’m Viking 1, the first U.S. spacecraft to work on Mars. I landed on July 20, 1976 and sent home pictures of a rusty red desert. My scoop dug up soil to test it for tiny living things, and the answers were puzzling. I kept talking to Earth until November 11, 1982.",s:[["Jul 20, 1976","landing day"],["6+ years","working on Mars"],["Nov 11, 1982","last contact"]],u:"https://science.nasa.gov/mission/viking-1/"},
+{y:1997.5,k:"Mars, July 4, 1997",n:"Sojourner",g:"rover",a:"drive",b:"mars",t:"I’m Sojourner, the first rover to drive on Mars! I rolled down a ramp from my Pathfinder lander in July 1997. My team planned for 7 Mars days. I kept going for 83! I used a tool called an alpha proton X-ray spectrometer to find out what rocks are made of.",s:[["83 sols","lasted (planned: 7)"],["about 100 m","total distance"],["Jul 1997","first rover on Mars"]],u:"https://science.nasa.gov/mission/mars-pathfinder/"},
+{y:2001.1,k:"Asteroid Eros, February 12, 2001",n:"NEAR Shoemaker",g:"probe",a:"land",b:"rock",t:"I’m NEAR Shoemaker. In February 2000, I became the first spacecraft to orbit an asteroid. Then my team tried something nobody planned. On February 12, 2001, I landed on Eros, even though I wasn’t built to land. I kept sending signals home from the surface for about two weeks.",s:[["Feb 14, 2000","first asteroid orbit"],["Feb 12, 2001","landed on Eros"],["about 34 km","length of Eros"]],u:"https://science.nasa.gov/mission/near-shoemaker/"},
+{y:2004.0,k:"Mars, January 4, 2004",n:"Spirit",g:"rover",a:"drive",b:"mars",t:"I’m Spirit, one of twin rovers. I landed in Gusev Crater in January 2004. My mission was supposed to last 90 Mars days, but I worked for more than six years! I found signs that water once changed the rocks here. In 2009, I got stuck in soft sand. My last message came on March 22, 2010.",s:[["6+ years","worked (planned: 90 Mars days)"],["about 7.7 km","distance driven"],["Mar 22, 2010","last contact"]],u:"https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/"},
+{y:2004.1,k:"Mars, January 25, 2004",n:"Opportunity",g:"rover",a:"drive",b:"mars",t:"I’m Opportunity, Spirit’s twin. I landed on the flat plains of Meridiani Planum, also planned for 90 Mars days. I worked for more than 14 years! I found tiny round rocks nicknamed “blueberries” and proof that liquid water once soaked this land. In June 2018, a giant dust storm blocked my sunlight, and I went quiet.",s:[["45 km","driven, more than a marathon"],["14+ years","worked (planned: 90 Mars days)"],["Jun 10, 2018","last contact"]],u:"https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/"},
+{y:2008.4,k:"Mars, May 25, 2008",n:"Phoenix",g:"lander",a:"land",b:"mars",t:"I’m Phoenix. I landed near Mars’s frozen north pole in May 2008 with one big question: is there water ice? My robot arm dug into the ground and found it! Then Martian winter came, the Sun sank low, and my solar panels ran out of power. I sent my last signal on November 2, 2008.",s:[["May 25, 2008","landing day"],["water ice","found just under the soil"],["Nov 2, 2008","last contact"]],u:"https://nssdc.gsfc.nasa.gov/"},
+{y:2009.2,k:"Deep space, launched March 6, 2009",n:"Kepler Space Telescope",g:"probe",a:"drift",b:"space",t:"I’m Kepler, a space telescope with one job: stare at about 150,000 stars and watch for tiny dips in light when a planet passes in front. It worked! I helped find more than 2,600 planets outside our solar system. In 2018, I ran out of fuel, and NASA retired me. I still trail Earth around the Sun.",s:[["Mar 6, 2009","launch"],["2,600+","planets found"],["Oct 30, 2018","retired"]],u:"https://science.nasa.gov/mission/kepler/"},
+{y:2011.5,k:"The asteroid belt, arrived July 2011",n:"Dawn",g:"probe",a:"drift",b:"space",t:"I’m Dawn, and my gentle ion engine glows blue. I visited the giant asteroid Vesta in 2011, then flew on to the dwarf planet Ceres in 2015. I was the first spacecraft to orbit two different worlds in the asteroid belt. In 2018, I ran out of fuel. Now I circle Ceres, silent and unpowered.",s:[["Jul 2011","arrived at Vesta"],["Mar 2015","arrived at Ceres"],["2018","ran out of fuel"]],u:"https://science.nasa.gov/mission/dawn/"},
+{y:2018.9,k:"Mars, November 26, 2018",n:"InSight",g:"lander",a:"land",b:"mars",t:"I’m InSight. My job wasn’t driving. It was listening. My super-sensitive seismometer heard more than 1,300 marsquakes, and the biggest, in May 2022, was magnitude 5. Slowly, dust piled onto my solar panels. NASA ended my mission on December 21, 2022.",s:[["Nov 26, 2018","landing day"],["1,300+","marsquakes heard"],["Dec 21, 2022","mission ended"]],u:"https://science.nasa.gov/mission/insight/"},
+{y:2021.3,k:"Mars, April 19, 2021",n:"Ingenuity",g:"heli",a:"fly",b:"mars",t:"I’m Ingenuity, the first helicopter to fly on another planet! My team hoped for 5 flights. My first hop, on April 19, 2021, lasted 39 seconds. In all, I flew 72 times. On my last flight in January 2024, my rotor blades were damaged. I can’t fly anymore, but I’ll always be the first.",s:[["72","flights (planned: 5)"],["128 min","total time in the air"],["Jan 18, 2024","last flight"]],u:"https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/"}
+];
+const $=s=>document.querySelector(s),T0=1966,T1=2025,pos=y=>(y-T0)/(T1-T0)*100;
+$("#sc").innerHTML=D.map((d,i)=>`<section class="scene ${d.b}" id="s${i}"><div class="stage"><div class="art">${d.b!="space"?'<div class="gr"></div>':""}${d.b=="moon"?'<div class="earth"></div>':""}<div class="mach">${G[d.g]}</div></div><div class="card"><small>${d.k}</small><h2>${d.n}</h2><p>${d.t}</p><div class="st">${d.s.map(x=>`<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join("")}</div><a href="${d.u}" target="_blank" rel="noopener">NASA source</a></div></div></section>`).join("");
+const trk=$("#trk");
+[1970,1980,1990,2000,2010,2020].forEach(y=>{const e=document.createElement("span");e.className="dc";e.textContent=y;e.style.left=pos(y)+"%";trk.appendChild(e)});
+D.forEach((d,i)=>{d.el=$("#s"+i);d.st=d.el.querySelector(".stage");d.c=d.el.querySelector(".card");d.m=d.el.querySelector(".mach");
+const b=document.createElement("button");b.className="tk";b.style.left=pos(d.y)+"%";b.title=d.n;b.setAttribute("aria-label",d.n+", "+Math.floor(d.y));
+b.onclick=()=>{const r=d.el.getBoundingClientRect();scrollTo({top:r.top+scrollY+(r.height-innerHeight)*.5,behavior:"smooth"})};trk.appendChild(b);d.tk=b});
+const ease=x=>1-Math.pow(1-x,3),cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+function up(){
+const vh=innerHeight,W=innerWidth;let cur=-1,cp=0;
+D.forEach((d,i)=>{const r=d.el.getBoundingClientRect(),p=cl(-r.top/(r.height-vh));
+if(r.top<=vh*.5&&r.bottom>vh*.5){cur=i;cp=p}
+if(r.bottom<0||r.top>vh)return;
+const v=Math.min(1,p*10+.4)*Math.min(1,(1-p)*10),t=cl((p-.08)*6),m=d.m;let dx=0,dy=0,rot=0;
+d.st.style.opacity=v;d.c.style.opacity=t;d.c.style.transform="translateY("+(1-t)*26+"px)";
+if(d.a=="land")dy=-(1-ease(cl(p/.35)))*vh*.45;
+else if(d.a=="drive"){dx=(p-.5)*W*.34;d.st.style.setProperty("--w",p*1080+"deg")}
+else if(d.a=="drift"){dx=(p-.5)*W*.3;dy=Math.sin(p*6)*8;rot=(p-.5)*14}
+else{const f=cl((p-.8)/.2);dy=-ease(cl(p/.3))*vh*.16*(1-f*.5);rot=f*12;m.classList.toggle("off",p>.85)}
+m.style.setProperty("--dx",dx+"px");m.style.setProperty("--dy",dy+"px");m.style.setProperty("--r",rot+"deg");
+d.st.style.setProperty("--w",d.st.style.getPropertyValue("--w"));
+if(d.a=="drive")m.style.setProperty("--w",p*1080+"deg");
+});
+const last=D[D.length-1].el.getBoundingClientRect().bottom<=vh*.5;
+let y=D[0].y;
+if(cur>=0){const a=D[cur],b=D[cur+1];y=b?a.y+(b.y-a.y)*cp:a.y}else if(last)y=D[D.length-1].y;
+$("#yr").textContent=Math.floor(y);$("#fl").style.width=pos(y)+"%";$("#mk").style.left=pos(y)+"%";
+D.forEach((d,i)=>d.tk.classList.toggle("on",i==cur||(last&&i==D.length-1)));
+}
+const cv=$("#sk"),cx=cv.getContext("2d");let st=[],lw=0;
+function rs(){if(innerWidth==lw)return;lw=innerWidth;cv.width=innerWidth;cv.height=innerHeight;st=Array.from({length:170},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height,r:Math.random()*1.4+.3,d:Math.random()*.5+.1,o:Math.random()*.6+.3}))}
+function ds(){cx.clearRect(0,0,cv.width,cv.height);cx.fillStyle="#fff";st.forEach(s=>{const y=((s.y-scrollY*s.d)%cv.height+cv.height)%cv.height;cx.globalAlpha=s.o;cx.beginPath();cx.arc(s.x,y,s.r,0,6.3);cx.fill()})}
+let tk=false;const fr=()=>{tk=false;up();ds()},req=()=>{if(!tk){tk=true;requestAnimationFrame(fr)}};
+addEventListener("scroll",req,{passive:true});addEventListener("resize",()=>{rs();req()});
+rs();fr();
+</script>
+</body>
+</html>
